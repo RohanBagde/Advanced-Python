@@ -1,0 +1,7 @@
+#mysqlconnect.py
+import mysql.connector
+con=mysql.connector.connect(
+                           host="localhost", 
+                           user="root", 
+						   pa="rohan")
+print("mysql connected")

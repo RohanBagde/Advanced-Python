@@ -1,0 +1,20 @@
+#inserttab.py
+#inserting data dynamically
+import sys
+import mysql.connector
+while (True):
+    con=mysql.connector.connect(host="localhost",
+                                user="root",
+                                passwd="Shashank@21",
+                                database="university")
+    cur=con.cursor()
+    tno=int(input("enter teachers ID number: "))
+    name=input("enter teachers name: ")
+    sal=float(input("enter teachers salory: "))
+    cur.execute("insert into teachers values(%d,'%s',%f)" %(tno,name,sal))
+    con.commit()
+    print("{}teachers data inserted into table dynamically is succesfully".format(cur.rowcount))
+    ch=input("\nDo u want to insert another record(yes/no):")
+    if(ch=="no"):
+        print("Thanks for using this Program:")
+        sys.exit()
