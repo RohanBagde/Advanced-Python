@@ -1,0 +1,4 @@
+#dbcontest.py
+import cx_Oracle
+kvrcon=cx_Oracle.connect("rohan/rohan@localhost/orcl")
+print("python program")
